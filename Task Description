@@ -1,0 +1,16 @@
+Task Description
+
+1. Transaction data is received by file and needs to be processed and applied to customer accounts.
+2. Customer transactions files are received twice daily at 6:00 and 21:00
+3. The file is in csv format and is formatted as follows:
+  "Customer Account#", "Transaction Amount"
+  123456789, 100.00
+  987654321, -50.00
+4. Corrupt lines should not be processed but skipped.
+5. When a file is received, processing of the file should commence within 5 minutes.
+6. An example of the required report format was provided:
+  File Processed: finance_customer_transactions-20171201060101.csv
+  Total Accounts: 203,102
+  Total Credits : $856,480.70
+  Total Debits : $100,132.50
+  Skipped Transactions: 103
