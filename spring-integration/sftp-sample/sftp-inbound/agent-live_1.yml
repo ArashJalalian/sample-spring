@@ -1,0 +1,32 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 1446
+
+  adminConnectors:
+    - type: http
+      port: 9082
+
+httpClient:
+  timeout: 20 minutes
+  connectionTimeout: 20 minutes
+
+logging:
+  level: INFO
+  loggers:
+    co.cirrusmedical.xirrix.desktopagent: INFO
+  appenders:
+    - type: console
+      threshold : ALL
+    - type: file
+      currentLogFilename: co.cirrusmedical.xirrix.desktopmanager.log
+      archive: true
+      archivedLogFilenamePattern: co.cirrusmedical.xirrix.desktopmanager-%d.log
+      archivedFileCount: 10
+      threshold: ALL
+
+desktopServerManager:
+  host: "http://localhost:1447"
+
+desktopServer:
+  host: "http://localhost:1445"
